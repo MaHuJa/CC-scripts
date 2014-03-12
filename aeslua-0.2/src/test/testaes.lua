@@ -155,6 +155,7 @@ function getRandomBits(bits)
     return result;
 end
 
+local ccsleep = sleep or function() end
 function testnAES(n)
     math.randomseed(os.time());
     
@@ -168,7 +169,7 @@ function testnAES(n)
             printResult(result);
             return false;
         end
-		sleep(0)
+		ccsleep(0)
     end
    	return true;
 end
