@@ -3,6 +3,7 @@ local util = dofile("aeslua/util.lua");
 local buffer = dofile("aeslua/buffer.lua");
 
 local public = {};
+local unpack = unpack or table.unpack
 
 aeslua.ciphermode = public;
 
