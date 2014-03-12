@@ -23,7 +23,7 @@ function public.getByte(number, index)
     -- on CC this causes a crash, vanilla lua it works...
     -- Guess #1 is that the vanilla bit32 discards high bits;
     -- And this passes the testaes.lua tests...
-    if number >= 0xffffffff then number = number - 0xffffffff end
+    if number > 0xffffffff then number = number - 0x100000000 end
     if (index == 0) then
         return bit.band(number,0xff);
     else
