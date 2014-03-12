@@ -1,4 +1,4 @@
-require("aeslua");
+dofile("aeslua");
 local aes = aeslua.aes;
 local util = aeslua.util;
 

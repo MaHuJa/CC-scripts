@@ -1,7 +1,7 @@
 bit = bit or bit32;
 
-local gf = require("aeslua.gf");
-local util = require("aeslua.util");
+local gf = dofile("aeslua/gf.lua");
+local util = dofile("aeslua/util.lua");
 
 --
 -- Implementation of AES with nearly pure lua (only bitlib is needed) 

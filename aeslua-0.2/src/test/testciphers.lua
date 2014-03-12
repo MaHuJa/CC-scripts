@@ -1,5 +1,5 @@
-require("aeslua");
-local util = require("aeslua.util");
+dofile("aeslua.lua");
+local util = dofile("aeslua/util.lua");
 
 math.randomseed(os.time());
 

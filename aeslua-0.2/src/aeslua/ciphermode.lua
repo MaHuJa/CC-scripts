@@ -1,6 +1,6 @@
-local aes = require("aeslua.aes");
-local util = require("aeslua.util");
-local buffer = require("aeslua.buffer");
+local aes = dofile("aeslua/aes.lua");
+local util = dofile("aeslua/util.lua");
+local buffer = dofile("aeslua/buffer.lua");
 
 local public = {};
 
