@@ -1,4 +1,4 @@
-require("bit");
+bit = bit or bit32;
 
 local gf = require("aeslua.gf");
 local util = require("aeslua.util");

@@ -1,4 +1,4 @@
-require("bit");
+bit = bit or bit32;
 
 local public = {};
 local private = {};
