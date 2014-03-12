@@ -19,6 +19,11 @@ end
 -- get byte at position index
 --
 function public.getByte(number, index)
+    -- number was occasionally over 32-bit int max
+    -- on CC this causes a crash, vanilla lua it works...
+    -- Guess #1 is that the vanilla bit32 discards high bits;
+    -- And this passes the testaes.lua tests...
+    if number >= 0xffffffff then number = number - 0xffffffff end
     if (index == 0) then
         return bit.band(number,0xff);
     else
