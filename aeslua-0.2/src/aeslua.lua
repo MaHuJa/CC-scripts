@@ -2,6 +2,10 @@ local private = {};
 local public = {};
 aeslua = public;
 
+bit = bit or bit32
+bit.rshift = bit.brshift
+bit.lshift = bit.blshift
+
 local ciphermode = dofile("aeslua/ciphermode.lua");
 local util = dofile("aeslua/util.lua");
 
