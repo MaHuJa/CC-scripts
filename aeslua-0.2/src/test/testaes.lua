@@ -1,4 +1,4 @@
-dofile("aeslua");
+dofile("aeslua.lua");
 local aes = aeslua.aes;
 local util = aeslua.util;
 
@@ -168,8 +168,8 @@ function testnAES(n)
             printResult(result);
             return false;
         end
+		sleep(0)
     end
-    
    	return true;
 end
 
