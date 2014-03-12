@@ -53,7 +53,7 @@ end
 --
 function public.encrypt(password, data, keyLength, mode)
 	assert(password ~= nil, "Empty password.");
-	assert(password ~= nil, "Empty data.");
+	assert(data ~= nil, "Empty data.");
 	 
     local mode = mode or public.CBCMODE;
     local keyLength = keyLength or public.AES128;
@@ -88,6 +88,9 @@ end
 -- mode and keyLength must be the same for encryption and decryption.
 --
 function public.decrypt(password, data, keyLength, mode)
+	assert(password ~= nil, "Empty password.");
+	assert(data ~= nil, "Empty data.");
+
     local mode = mode or public.CBCMODE;
     local keyLength = keyLength or public.AES128;
 
