@@ -7,6 +7,8 @@ reactor = peripheral.wrap "back";
 supplier = peripheral.wrap "me_interface_0";
 supplierside = "down";
 
+reactortable = dofile "reactortable"
+
 function reactorOn()
 	rs.setOutput("back",true)
 end
