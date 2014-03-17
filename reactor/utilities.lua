@@ -10,6 +10,7 @@ function addItem(name,index)
 		end
 	end
 	if not slot then 
+		logmessage ("Out of "..name)
 		manualmaintenance()	-- never returns
 		return addItem(name,index) -- but if it does, it means try again
 	end
