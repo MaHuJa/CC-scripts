@@ -18,5 +18,5 @@ function addItem(name,index)
 end
 
 function removeItem (index)
-	assert(supplier.pullItem(supplierside,index)==1)
+	assert(puller.pullItem(pullerside,index)==1)
 end

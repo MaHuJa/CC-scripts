@@ -4,8 +4,12 @@ reactor_max = 0.1  -- shutdown at higher than
 logfile = "/reactorlog"
 -- Directly usable objects
 reactor = peripheral.wrap "back";
+
 supplier = peripheral.wrap "me_interface_0";
 supplierside = "down";
+
+puller = supplier
+pullerside = supplierside
 
 reactortable = dofile "reactortable"
 
