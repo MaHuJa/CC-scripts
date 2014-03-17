@@ -1,11 +1,17 @@
-reactorname = "nuclear_reactor_0"
-suppliername = "me_interface_0"
-supplierside = "down"	-- the supplier will reach into this side to manipulate reactor
-redstone_side = "back"
-
--- Temperatures, 1 is reactor's max'
+-- Temperatures, 1 is reactor's max. 0.85 can cause block melts
 reactor_min = 0  -- preheat to this
 reactor_max = 0.1  -- shutdown at higher than
-
-
 logfile = "/reactorlog"
+-- Directly usable objects
+reactor = peripheral.wrap "back";
+supplier = peripheral.wrap "me_interface_0";
+supplierside = "down";
+
+function reactorOn()
+	rs.setOutput("back",true)
+end
+
+function reactorOff()
+	rs.setOutput("back,false)
+end
+
