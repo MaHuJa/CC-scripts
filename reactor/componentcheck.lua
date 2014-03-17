@@ -4,7 +4,7 @@
 
 componentcheck = {}
 
-function componentcheck['ic2.reactorVentGold'] (index, data, running)
+componentcheck['ic2.reactorVentGold'] = function (index, data, running)
 	assert (data)
 	if data.dmg > 4000 then
 		if running then return automaintain() end

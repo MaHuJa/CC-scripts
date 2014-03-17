@@ -13,7 +13,8 @@ function reactorOn()
 	rs.setOutput("back",true)
 end
 
+-- CRITICAL
 function reactorOff()
-	rs.setOutput("back,false)
+	rs.setOutput("back",false)
 end
 

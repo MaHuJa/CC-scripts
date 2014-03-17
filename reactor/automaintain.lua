@@ -18,7 +18,7 @@ for i = 1,reactor.getInventorySize() do
 	if not obj and reactortable[i] then
 		addItem(reactortable[i])
 	-- wrong object
-	elseif obj and obj.name != reactortable[i] then
+	elseif obj and obj.name ~= reactortable[i] then
 		removeItem(i)
 		addItem(reactortable[i],i)
 	-- has checking routine
