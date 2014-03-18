@@ -33,3 +33,8 @@ function emergencyStop()
 	logmessage "Emergency stop completed!";
 	manualmaintenance()	
 end
+function reactorOff()
+	reactorStop()
+	sleep(1.2)
+	if reactor.isActive() then emergencyStop() end
+end

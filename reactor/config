@@ -13,12 +13,12 @@ pullerside = supplierside
 
 reactortable = dofile "reactortable"
 
-function reactorOn()
+function reactorStart()
 	rs.setOutput("back",true)
 end
 
 -- CRITICAL
-function reactorOff()
+function reactorStop()
 	rs.setOutput("back",false)
 end
 

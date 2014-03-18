@@ -1,6 +1,6 @@
 
-assert(reactorOff and reactorOff())
-assert(reactorOn)
+assert(reactorStop)
+assert(reactorStart)
 assert(reactor and reactor.getInventoryName() == "Nuclear Reactor")
 assert(supplier and supplier.getInventorySize and supplierside)
 assert(puller and puller.getInventorySize and supplierside)
