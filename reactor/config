@@ -13,9 +13,12 @@ pullerside = supplierside
 
 reactortable = dofile "reactortable"
 
+-- Reactorstart will be called every second, 
+-- and can thus be used to deadmans-trigger an external watchdog if necessary.
 function reactorStart()
 	rs.setOutput("back",true)
 end
+
 
 -- CRITICAL
 function reactorStop()
