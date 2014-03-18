@@ -13,6 +13,11 @@ pullerside = supplierside
 
 reactortable = dofile "reactortable"
 
+-- Return true if whatever is receiving the output has capacity for more
+function powerCheck()
+	return true
+end
+
 -- Reactorstart will be called every second, 
 -- and can thus be used to deadmans-trigger an external watchdog if necessary.
 function reactorStart()
