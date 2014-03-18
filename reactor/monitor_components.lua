@@ -17,7 +17,7 @@ for k,v in pairs(all) do
 		automaintain();
 		return false;
 	end
-	if (v and componentcheck[v.name) then
+	if (v and componentcheck[v.name]) then
 		result = result and componentcheck[v.name](k,v,true)
 	end
 	return result;

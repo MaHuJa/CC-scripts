@@ -23,7 +23,7 @@ end
 
 function mainloop() 
 	while true do
-		powerCheck() 
+		local _ = powerCheck() 
 		and monitor_reactemp() 
 		and monitor_components()
 		and reactorStart()
