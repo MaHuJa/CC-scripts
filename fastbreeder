@@ -1,0 +1,53 @@
+--[[  Fast breeder
+	This is a basic CC program to control my "fast breeder" (plutonium-factory) reactor.
+	It will basically only swap spent fuel cells, and do nothing else.
+]]
+supplier = assert (peripheral.wrap "me_interface_0")
+reactor = assert (peripheral.wrap "back")
+
+function addItem(name,index)
+	local slot, k, v
+	-- search through supplier inventory
+
+	for k,v in pairs(supplier.getAllStacks()) do
+		if v.name == name then
+			slot = k
+			break
+		end
+	end
+	if not slot then 
+		print ("Out of "..name);
+		(exit or os.exit)()
+		error "Should not reach here..."
+	end
+	supplier.pushItem("down",slot,1,index)
+end
+
+function removeItem (index)
+	assert(supplier.pullItem("down",index,64,8)>=1)
+end
+
+function check()
+	local i,obj
+	for i = 1,reactor.getInventorySize() do
+		obj = reactor.getStackInSlot(i);
+		if (obj) then
+			if obj.name == "ic2.reactorUraniumSimpledepleted" then
+				removeItem(i)
+				addItem('ic2.reactorUraniumSimple',i)
+				io.write('1');
+			end
+			if obj.name == "ic2.reactorUraniumDualdepleted" then
+				removeItem(i)
+				addItem('ic2.reactorUraniumDual',i)
+				io.write('2');
+			end
+		end
+	end
+end
+
+while true do 
+	check() 
+	io.write(".")
+	sleep(30)
+end
